@@ -11,6 +11,9 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
+// Note that this is not secure for use in production, and to only use for local development (which isn't a big issue for us because this is a personal project app with no real users)
+
 const db = knex({
   client: 'pg',
   connection: {
