@@ -14,12 +14,14 @@ const image = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-acute-04027', 
+    host : process.env.DATABASE_URL, 
     // This is the database on Heroku
     // It was localhost 127.0.0.1 (home) during development
-    user : 'joebuono', // there's not really a user
-    password : '',
-    database : 'smart-brain'
+    ssl: true
+    // This was used during development
+    // user : 'joebuono', // there's not really a user
+    // password : '',
+    // database : 'smart-brain'
   }
 });
 
