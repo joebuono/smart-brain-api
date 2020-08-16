@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 
+// testing github
+
 // Importing the functions that handle the different routes (in the controllers folder)
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
