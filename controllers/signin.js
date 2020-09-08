@@ -4,8 +4,6 @@ const handleSignin = (db, bcrypt) => (req, res) => {
     return res.status(400).json('Incorrect signin form submission');
   }
   
-  
-  
   db.select('email', 'hash').from('login')
     .where('email', '=', email)
     .then(data => {

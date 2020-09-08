@@ -1,5 +1,9 @@
 const Clarifai = require('clarifai');
 
+// How to manage secrets? SSH keys, tokens, passwords, API keys, etc
+// Usually people set an environmental variable
+// At the end of the day, your code is always being run inside an operating system
+// process.env.NODE_ENV is the environment
 const app = new Clarifai.App({
   apiKey: '852cd1809be6476aac272b038fa73d52'
  });
@@ -9,6 +13,13 @@ const app = new Clarifai.App({
 
 // For the sake of security and not exposing our API key to the public, 
 // we're doing the API call on the server
+// Request the menu item in exactly the right way
+// *** An API is a description of the communication requirements ***
+// An API is the menu, not the waiter
+// If you want this info, then you have to make this API call/request in exactly this way
+// If you send this to us in this way, we'll send info back to you
+// It's how you actually do the communication
+// How to order something from a menu
 const handleApiCall = (req, res) => {
   app.models
     // This part has been updated with the recent Clarifai changed. Used to be:
