@@ -3,7 +3,7 @@ const handleRegister = (req, res, db, bcrypt) => {
 
   // if any of these are empty, send error, don't insert into database
   if (!email || !name || !password) {
-    return res.status(400).json('Incorrect form submission');
+    return res.status(400).json('Incorrect form submission.');
   }
 
   // synchronous hashing
